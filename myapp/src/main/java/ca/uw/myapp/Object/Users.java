@@ -22,6 +22,7 @@ import javax.validation.constraints.NotNull;
 public class Users {
     
     @Id
+    @Column(name="userid")
     private String userid;
     
     @Column(name="username")
