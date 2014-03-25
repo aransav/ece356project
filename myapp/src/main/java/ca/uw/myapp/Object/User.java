@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
-@Table(name="USER")
+@Table(name="_USER")
 public class User implements Serializable {
     
     @Id
