@@ -30,23 +30,153 @@ public class Users {
     @Column(name="password")
     private String password;
     
-    @Column(name="firstname")
+    @Column(name="firstName")
     private String firstname;
-    @Column(name="lastname")
-    private String lastname;
-    @Column(name="middlename")
+    @Column(name="middleName")
     private String middlename;
+    @Column(name="lastName")
+    private String lastname;
+   
+    @Column(name="zip",length=6)
+    private String zip;
+    
+    @Column(name="dateOfBirth")
+    private String dateofbirth;
+    
+    @Column(name="aptNo")
+    private String apt_no;
+    
+    @Column(name="homePhoneNo")
+    private int homephoneno;
+    @Column(name="cellPhoneNo")
+    private int cellphoneno;
+    @Column(name="workPhoneNo")
+    private int workphoneno;
+    
+    @Column(name="emergencyContactName")
+    private String emergencycontactname;
+    @Column(name="emergencycontactno")
+    private String emergencyContactNo;
+    
+   
+    
     
     public Users(){}
 
-    public Users(String userid, String username, String password, String firstname, String lastname, String middlename) {
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
         this.userid = userid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
-        this.lastname = lastname;
+    }
+
+    public String getMiddlename() {
+        return middlename;
+    }
+
+    public void setMiddlename(String middlename) {
         this.middlename = middlename;
     }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+    public String getApt_no() {
+        return apt_no;
+    }
+
+    public void setApt_no(String apt_no) {
+        this.apt_no = apt_no;
+    }
+
+    public int getHomephoneno() {
+        return homephoneno;
+    }
+
+    public void setHomephoneno(int homephoneno) {
+        this.homephoneno = homephoneno;
+    }
+
+    public int getCellphoneno() {
+        return cellphoneno;
+    }
+
+    public void setCellphoneno(int cellphoneno) {
+        this.cellphoneno = cellphoneno;
+    }
+
+    public int getWorkphoneno() {
+        return workphoneno;
+    }
+
+    public void setWorkphoneno(int workphoneno) {
+        this.workphoneno = workphoneno;
+    }
+
+    public String getEmergencycontactname() {
+        return emergencycontactname;
+    }
+
+    public void setEmergencycontactname(String emergencycontactname) {
+        this.emergencycontactname = emergencycontactname;
+    }
+
+    public String getEmergencyContactNo() {
+        return emergencyContactNo;
+    }
+
+    public void setEmergencyContactNo(String emergencyContactNo) {
+        this.emergencyContactNo = emergencyContactNo;
+    }
+    
+    
+
     
     
     
