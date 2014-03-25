@@ -11,21 +11,29 @@ package ca.uw.myapp.Object;
  * @author siva
  */
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="ADDRESS")
-public class Address {
+public class Address implements Serializable {
+    
     @Id
+    @Column(name="address_id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+    
+    
     @Column(name="zip")
     private String zip;
-    
-    @Column(name="streetname")
+    @Column(name="street_name")
     private String streetName;
-    @Column(name="steetno")
+    @Column(name="steet_no")
     private String streetNo;
     @Column(name="city")
     private String city;
@@ -33,6 +41,14 @@ public class Address {
     private String province;
 
     public Address() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getZip() {
@@ -74,6 +90,8 @@ public class Address {
     public void setProvince(String province) {
         this.province = province;
     }
+
+  
     
     
     

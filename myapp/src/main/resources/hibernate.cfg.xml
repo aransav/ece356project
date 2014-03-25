@@ -8,9 +8,19 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">password</property>
     <property name="hibernate.default_schema">test</property>
-    <property name="hbm2ddl.auto">create</property>
+    <property name="hbm2ddl.auto">create-drop</property>
     
-    <mapping class="ca.uw.myapp.Object.Users"/>
+    <mapping class="ca.uw.myapp.Object.Address"/>
+    <mapping class="ca.uw.myapp.Object.Appointment"/>
+    <mapping class="ca.uw.myapp.Object.DoctorPatient"/>
+    <mapping class="ca.uw.myapp.Object.DoctorStaff"/>
+    <mapping class="ca.uw.myapp.Object.Patient"/>
+    <mapping class="ca.uw.myapp.Object.Prescription"/>
+    <mapping class="ca.uw.myapp.Object.Staff"/>
+    <mapping class="ca.uw.myapp.Object.User"/>
+    <mapping class="ca.uw.myapp.Object.VisitPrescription"/>
+    <mapping class="ca.uw.myapp.Object.VisitationRecord"/>
+    
         
     
     

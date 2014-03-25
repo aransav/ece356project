@@ -11,39 +11,49 @@ package ca.uw.myapp.Object;
  * @author siva
  */
 
+import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="STAFF")
-public class Staff {
-    @Id
-    @Column(name="id")
-    private String id;
+public class Staff implements Serializable {
     
-    @Column(name="role")
-    private String role;
+    @Id
+    @OneToOne(cascade={CascadeType.ALL})
+    @JoinColumn(referencedColumnName = "id", name = "staff_id")
+    private User users;
+    
+    @Column(name="roles")
+    private String roles;
 
     public Staff() {
     }
 
-    public String getId() {
-        return id;
+    public User getUsers() {
+        return users;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUsers(User users) {
+        this.users = users;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoles() {
+        return roles;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
+
+    
+    
+    
     
     
 }

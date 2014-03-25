@@ -6,8 +6,11 @@
 
 package ca.uw.myapp.Object;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,12 +20,13 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="PRESCRIPTIONS")
-public class Prescriptions {
+@Table(name="PRESCRIPTION")
+public class Prescription implements Serializable {
     
     @Id
-    @Column(name="id")
-    private String id;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     
     @Column(name="name")
     private String name;
@@ -30,14 +34,14 @@ public class Prescriptions {
     @Column(name="description")
     private String description;
 
-    public Prescriptions() {
+    public Prescription() {
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,6 +60,9 @@ public class Prescriptions {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
     
     
 }

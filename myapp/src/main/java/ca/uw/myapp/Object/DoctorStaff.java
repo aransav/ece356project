@@ -3,48 +3,65 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package ca.uw.myapp.Object;
 
+import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
  *
  * @author siva
  */
-
 @Entity
-@Table(name="DOCTORSTAFF")
-public class DoctorStaff {
+@Table(name = "DOCTORSTAFF")
+public class DoctorStaff implements Serializable {
+
     @Id
-    @Column(name="doctorid")
-    private String doctorId;
-    
-    @Column(name="staffid")
-    private String staffId;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(referencedColumnName = "staff_id")
+    private Staff doctor;
+
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(referencedColumnName = "staff_id")
+    private Staff staff;
 
     public DoctorStaff() {
     }
 
-    public String getDoctorId() {
-        return doctorId;
+    public Long getId() {
+        return id;
     }
 
-    public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getStaffId() {
-        return staffId;
+    public Staff getDoctor() {
+        return doctor;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId;
+    public void setDoctor(Staff doctor) {
+        this.doctor = doctor;
     }
-    
-    
-    
+
+    public Staff getStaff() {
+        return staff;
+    }
+
+    public void setStaff(Staff staff) {
+        this.staff = staff;
+    }
+
 }

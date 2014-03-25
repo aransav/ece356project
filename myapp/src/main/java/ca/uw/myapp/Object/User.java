@@ -6,9 +6,16 @@
 
 package ca.uw.myapp.Object;
 
+import java.io.Serializable;
+import java.sql.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -18,58 +25,69 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
-@Table(name="USERS")
-public class Users {
+@Table(name="USER")
+public class User implements Serializable {
     
     @Id
-    @Column(name="userid")
-    private String userid;
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     
     @Column(name="username")
+    @NotNull
     private String username;
     
     @Column(name="password")
     private String password;
     
-    @Column(name="firstName")
+    @Column(name="first_name")
+    @NotNull
     private String firstname;
-    @Column(name="middleName")
+    
+    @Column(name="middle_name")
     private String middlename;
-    @Column(name="lastName")
+    
+    @Column(name="last_name")
+    @NotNull
     private String lastname;
-   
-    @Column(name="zip",length=6)
-    private String zip;
     
-    @Column(name="dateOfBirth")
-    private String dateofbirth;
+    @Column(name="gender")
+    private String gender;
     
-    @Column(name="aptNo")
-    private String apt_no;
+    @ManyToOne(cascade={CascadeType.ALL})
+    @JoinColumn(name = "address_id")
+    private Address address;
     
-    @Column(name="homePhoneNo")
+    @Column(name="date_of_birth")
+    private Date dateofbirth;
+    
+    @Column(name="phone_home")
     private int homephoneno;
-    @Column(name="cellPhoneNo")
+    @Column(name="phone_cell")
     private int cellphoneno;
-    @Column(name="workPhoneNo")
+    @Column(name="phone_work")
     private int workphoneno;
     
-    @Column(name="emergencyContactName")
-    private String emergencycontactname;
-    @Column(name="emergencycontactno")
+    @Column(name="emerg_contact_first_name")
+    private String emerg_contact_first_name;
+    @Column(name="emerg_contact_last_name")
+    private String emerg_contact_last_name;
+    @Column(name="phone_emerg")
     private String emergencyContactNo;
+    @Column(name="emerg_relation")
+    private String emergencyRelation;
     
    
     
     
-    public Users(){}
+    public User(){}
 
-    public String getUserid() {
-        return userid;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -112,28 +130,28 @@ public class Users {
         this.lastname = lastname;
     }
 
-    public String getZip() {
-        return zip;
+    public String getGender() {
+        return gender;
     }
 
-    public void setZip(String zip) {
-        this.zip = zip;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getDateofbirth() {
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Date getDateofbirth() {
         return dateofbirth;
     }
 
-    public void setDateofbirth(String dateofbirth) {
+    public void setDateofbirth(Date dateofbirth) {
         this.dateofbirth = dateofbirth;
-    }
-
-    public String getApt_no() {
-        return apt_no;
-    }
-
-    public void setApt_no(String apt_no) {
-        this.apt_no = apt_no;
     }
 
     public int getHomephoneno() {
@@ -160,12 +178,20 @@ public class Users {
         this.workphoneno = workphoneno;
     }
 
-    public String getEmergencycontactname() {
-        return emergencycontactname;
+    public String getEmerg_contact_first_name() {
+        return emerg_contact_first_name;
     }
 
-    public void setEmergencycontactname(String emergencycontactname) {
-        this.emergencycontactname = emergencycontactname;
+    public void setEmerg_contact_first_name(String emerg_contact_first_name) {
+        this.emerg_contact_first_name = emerg_contact_first_name;
+    }
+
+    public String getEmerg_contact_last_name() {
+        return emerg_contact_last_name;
+    }
+
+    public void setEmerg_contact_last_name(String emerg_contact_last_name) {
+        this.emerg_contact_last_name = emerg_contact_last_name;
     }
 
     public String getEmergencyContactNo() {
@@ -175,6 +201,18 @@ public class Users {
     public void setEmergencyContactNo(String emergencyContactNo) {
         this.emergencyContactNo = emergencyContactNo;
     }
+
+    public String getEmergencyRelation() {
+        return emergencyRelation;
+    }
+
+    public void setEmergencyRelation(String emergencyRelation) {
+        this.emergencyRelation = emergencyRelation;
+    }
+
+    
+    
+   
     
     
 

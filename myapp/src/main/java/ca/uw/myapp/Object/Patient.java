@@ -11,33 +11,39 @@ package ca.uw.myapp.Object;
  * @author siva
  */
 
+import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="PATIENT")
-public class Patient {
-    @Id
-    @Column(name="id")
-    private String id;
+public class Patient implements Serializable {
     
-    @Column(name="healthcardno")
+    @Id
+    @OneToOne(cascade={CascadeType.ALL})
+    @JoinColumn(referencedColumnName = "id", name = "patient_id")
+    private User u;
+    
+    @Column(name="health_card_no")
     private String healthCardNo;
     
-    @Column(name="socialinsno")
-    private String socialInsNo;
+    @Column(name="social_ins_no")
+    private long socialInsNo;
 
     public Patient() {
     }
 
-    public String getId() {
-        return id;
+    public User getUser() {
+        return u;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUser(User u) {
+        this.u = u;
     }
 
     public String getHealthCardNo() {
@@ -48,13 +54,11 @@ public class Patient {
         this.healthCardNo = healthCardNo;
     }
 
-    public String getSocialInsNo() {
+    public long getSocialInsNo() {
         return socialInsNo;
     }
 
-    public void setSocialInsNo(String socialInsNo) {
+    public void setSocialInsNo(long socialInsNo) {
         this.socialInsNo = socialInsNo;
     }
-    
-    
 }
