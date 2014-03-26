@@ -8,6 +8,10 @@
         <servlet-name>serv_signup</servlet-name>
         <servlet-class>ServPack.serv_signup</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>serv_up_usr_prof</servlet-name>
+        <servlet-class>ServPack.serv_up_usr_prof</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>serv_login</servlet-name>
         <url-pattern>/serv_login</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>serv_signup</servlet-name>
         <url-pattern>/serv_signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>serv_up_usr_prof</servlet-name>
+        <url-pattern>/serv_up_usr_prof</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

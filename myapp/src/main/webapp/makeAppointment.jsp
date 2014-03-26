@@ -1,11 +1,10 @@
 <%-- 
-    Document   : index
-    Created on : Mar 24, 2014, 11:20:16 PM
+    Document   : makeAppointment
+    Created on : Mar 26, 2014, 4:19:12 PM
     Author     : Aran
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -129,7 +128,7 @@
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="fa fa-files-o fa-fw"></i>Other Pages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -137,10 +136,10 @@
                             </li>
                             <li>
                                 <a href="userProf.jsp">User Profile</a>
-                            </li>                            
+                            </li>
                             <li>
                                 <a href="makeAppointment.jsp">Make New Appointment</a>
-                            </li>
+                            </li>                            
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -170,5 +169,3 @@
     
   </body>
 </html>
-
-

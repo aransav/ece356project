@@ -1,6 +1,6 @@
 <%-- 
-    Document   : userProf
-    Created on : Mar 26, 2014, 1:45:05 AM
+    Document   : userProfEdit
+    Created on : Mar 26, 2014, 3:50:04 PM
     Author     : Aran
 --%>
 
@@ -160,7 +160,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form role="form"> <!-- Start of form for patient info -->                                      
+                            <form role="form" method="post" action="">                                                              
                                 <div class ="row" > <!--Names -->
                                     <div class="col-lg-4" style="padding-top: 5px;">
                                         <div style="text-align: left;">
@@ -168,7 +168,7 @@
                                         </div>
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="lname" class="form-control" placeholder="Last Name" disabled>
+                                            <input type="text" name="lname" class="form-control" placeholder="Last Name" required>
                                         </div>
                                     </div>              
                                     <div class="col-lg-4" style="padding-top: 5px;">
@@ -177,7 +177,7 @@
                                         </div>
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="fname" class="form-control" placeholder="First Name" disabled>
+                                            <input type="text" name="fname" class="form-control" placeholder="First Name" required autofocus>
                                         </div>   
                                     </div>
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -186,18 +186,18 @@
                                         </div>              
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="mname" class="form-control" placeholder="Middle Name" disabled>
+                                            <input type="text" name="mname" class="form-control" placeholder="Middle Name" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-1" style="padding-top: 5px;">
                                         <div class="checkbox" style="text-align: left;">
                                           <label>
-                                            <input name="male" type="checkbox" disabled>Male
+                                            <input name="male" type="checkbox">Male
                                           </label>
                                         </div>                 
                                         <div class="checkbox" style="text-align: left;">
                                           <label>
-                                            <input name="female" type="checkbox" disabled>Female
+                                            <input name="female" type="checkbox">Female
                                           </label>
                                         </div>    
                                     </div>                           
@@ -209,7 +209,7 @@
                                         </div>                             
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="add_streetno" class="form-control" placeholder="Street Number" disabled>
+                                            <input type="text" name="add_streetno" class="form-control" placeholder="Street Number">
                                         </div>
                                     </div>
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -218,7 +218,7 @@
                                         </div>                             
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="add_aptno" class="form-control" placeholder="Apt Number" disabled>
+                                            <input type="text" name="add_aptno" class="form-control" placeholder="Apt Number">
                                         </div>
                                     </div>                                                
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -227,7 +227,7 @@
                                         </div>
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="add_street" class="form-control" placeholder="Street Name" disabled>
+                                            <input type="text" name="add_street" class="form-control" placeholder="Street Name">
                                         </div>                               
                                     </div>
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -236,7 +236,7 @@
                                         </div>                            
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="add_city" class="form-control" placeholder="City" disabled>
+                                            <input type="text" name="add_city" class="form-control" placeholder="City">
                                         </div>                            
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@
                                         </div>                                 
                                         <div class="input-group">
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="add_prov" class="form-control" placeholder="Province" disabled>
+                                            <input type="text" name="add_prov" class="form-control" placeholder="Province">
                                         </div>                            
                                     </div>                        
                                     <div class="col-lg-2" style="padding-top: 5px;">
@@ -256,7 +256,7 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="add_zip" class="form-control" placeholder="Zip Code" disabled>
+                                            <input type="text" name="add_zip" class="form-control" placeholder="Zip Code">
                                         </div>                  
                                     </div>
                                     <div class="col-lg-4" style="padding-top: 5px;">
@@ -265,7 +265,7 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="hcard" class="form-control" placeholder="Health Card Number" disabled>
+                                            <input type="text" name="hcard" class="form-control" placeholder="Health Card Number" required>
                                         </div>                  
                                     </div>                            
                                    <div class="col-lg-4" style="padding-top: 5px;">
@@ -274,7 +274,7 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="text" name="scard" class="form-control" placeholder="Social Insurance Number" disabled>
+                                            <input type="text" name="scard" class="form-control" placeholder="Social Insurance Number">
                                         </div>                  
                                     </div>                                                 
                                 </div>                    
@@ -285,7 +285,7 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="tel" name="phone_no_home" class="form-control" placeholder="XXXXXXXXX" disabled>
+                                            <input type="tel" name="phone_no_home" class="form-control" placeholder="XXXXXXXXX">
                                         </div>                  
                                     </div>                        
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -294,7 +294,7 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="tel" name="phone_no_cell" class="form-control" placeholder="XXXXXXXXX" disabled>
+                                            <input type="tel" name="phone_no_cell" class="form-control" placeholder="XXXXXXXXX">
                                         </div>                  
                                     </div>
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -303,7 +303,7 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="tel" name="phone_no_work" class="form-control" placeholder="XXXXXXXXX" disabled>
+                                            <input type="tel" name="phone_no_work" class="form-control" placeholder="XXXXXXXXX">
                                         </div>                  
                                     </div>                                              
                                     <div class="col-lg-3" style="padding-top: 5px;">
@@ -312,19 +312,17 @@
                                         </div>                         
                                         <div class="input-group">                                
                                             <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
-                                            <input type="date" name="dob" class="form-control" placeholder="DD/MM/YYYY" disabled>
+                                            <input type="date" name="dob" class="form-control" placeholder="DD/MM/YYYY">
                                         </div>                  
                                     </div>                           
-                                </div>                                                          
-                            </form> <!-- End of form for patient info -->
+                                </div>                                
+                                <div class="panel-body">
+                                    <div class ="col-lg-4">
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit" >Save Personal Info</button> 
+                                    </div>
+                                </div>                                
+                            </form>
                         </div>
-                        <div class="panel-body">
-                            <div class ="col-lg-4">
-                                <form METHOD="LINK" ACTION="userProfEdit.jsp">
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit" >Update Personal Info</button> 
-                                </form>
-                            </div>
-                        </div>                           
                     </div>
                 </div>
             </div>

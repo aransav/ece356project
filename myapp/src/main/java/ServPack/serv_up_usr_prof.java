@@ -12,14 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import ca.uw.myapp.Object.User;
 
 /**
  *
  * @author Aran
  */
-public class serv_signup extends HttpServlet {
+public class serv_up_usr_prof extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +31,8 @@ public class serv_signup extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
+        try  {
+            /* TODO output your page here. You may use following sample code. */
             String fname = request.getParameter("fname");
             String mname = request.getParameter("mname");
             String lname = request.getParameter("lname");
@@ -51,13 +50,6 @@ public class serv_signup extends HttpServlet {
             String phone_no_cell = request.getParameter("phone_no_cell");
             String phone_no_work = request.getParameter("phone_no_work");
             String dob = request.getParameter("dob");
-            String password1 = request.getParameter("password1");
-            String password2 = request.getParameter("password2");
-            if (!password1.equals(password2))
-            {
-                request.setAttribute("errorMessage", "Passwords were not the same.");
-                request.getRequestDispatcher("signupPage.jsp").forward(request,response); 
-            }
         }
         catch(Throwable exc)
         {
