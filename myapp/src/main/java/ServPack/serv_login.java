@@ -43,11 +43,11 @@ public class serv_login extends HttpServlet {
             
             if (s1.equals("s")) { //passes
                 System.out.println(user_cred.getUsername());
-                response.sendRedirect("resetpassPage.jsp");
+                response.sendRedirect("loginPass.jsp");
             }
             else
             {
-                response.sendRedirect("logoutRefresh.jsp");
+                response.sendRedirect("loginFail.jsp");
             }
         }
         catch(Throwable exc)
