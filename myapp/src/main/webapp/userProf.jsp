@@ -1,11 +1,10 @@
 <%-- 
-    Document   : index
-    Created on : Mar 24, 2014, 11:20:16 PM
+    Document   : userProf
+    Created on : Mar 26, 2014, 1:45:05 AM
     Author     : Aran
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -164,5 +163,3 @@
     
   </body>
 </html>
-
-

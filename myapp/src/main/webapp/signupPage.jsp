@@ -33,7 +33,9 @@
    <div class="container" id="signupbodyCenter">
       <form class="form-horizontal" role="form" action="serv_signup" method="post">
         <h2 class="form-signin-heading">Welcome to Sign Up Page</h2>
-        <span class="bg-danger">*${errorMessage}</span>
+        <c:if test = "${errorMessage != null}">
+                <span class="bg-danger">${errorMessage}</span>
+        </c:if>
         <div class ="form-group"> 
             <div class="input-group" style="padding-top: 5px;">
                 <span class ="input-group-addon" style="padding-right: 98px">First Name</span>
