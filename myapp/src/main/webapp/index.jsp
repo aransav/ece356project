@@ -4,6 +4,7 @@
     Author     : Aran
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -34,18 +35,41 @@
    <div class="container" id="signbodyCenter">
       <form class="form-horizontal" role="form" action="serv_login" method="post">
         <h2 class="form-signin-heading">Please Sign In</h2>
-        <div class ="form-group"> 
+        <c:if test = "${errorMessage == null}" >
+            <div class ="form-group"> 
+                <div class="input-group" style="padding-top: 5px;">
+                    <span class ="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" name="userID" class="form-control" placeholder="User ID" required autofocus>
+                </div>
+            </div>
+        </c:if>
+        <c:if test = "${errorMessage != null}" >
+        <div class ="form-group has-error"> 
             <div class="input-group" style="padding-top: 5px;">
                 <span class ="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" name="userID" class="form-control" placeholder="User ID" required autofocus>
+                <input id="inputError1" type="text" name="userID" class="form-control" placeholder="User ID" required autofocus>
+                <span class ="input-group-addon"><i class="fa fa-times"></i></span>
             </div>
         </div>
-        <div class ="form-group">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
+        </c:if>
+        <c:if test = "${errorMessage == null}" >
+            <div class ="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
             </div>
-        </div>
+        </c:if>
+        <c:if test = "${errorMessage != null}" >
+            <div class ="form-group has-error">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input id="inputError1" type="password" name="password" class="form-control" placeholder="Password" required>
+                    <span class ="input-group-addon"><i class="fa fa-times"></i></span>
+                </div>
+                <span class="bg-danger">*Username and/or Password may not be correct</span>
+            </div>      
+        </c:if>      
         <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button> 
         <div class="form-group">
             <div class="col-md-12 control">

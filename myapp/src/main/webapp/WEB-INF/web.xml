@@ -4,9 +4,17 @@
         <servlet-name>serv_login</servlet-name>
         <servlet-class>ServPack.serv_login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>serv_signup</servlet-name>
+        <servlet-class>ServPack.serv_signup</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>serv_login</servlet-name>
         <url-pattern>/serv_login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>serv_signup</servlet-name>
+        <url-pattern>/serv_signup</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

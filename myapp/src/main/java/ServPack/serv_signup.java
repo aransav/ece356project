@@ -19,7 +19,7 @@ import ca.uw.myapp.Object.User;
  *
  * @author Aran
  */
-public class serv_login extends HttpServlet {
+public class serv_signup extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,22 +34,25 @@ public class serv_login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            System.out.println("Running login servlet");
-            User user_cred = new User();
-            //user_cred.setUsername(request.getParameter("userID"));
-            //user_cred.setPassword(request.getParameter("password"));
-            
-            String userID = request.getParameter("userID");
-            String upass = request.getParameter("password");
-            
-            if (userID.equals("s")) { //passes
-                System.out.println(user_cred.getUsername());
-                response.sendRedirect("loginPass.jsp");
-            }
-            else
+            String fname = request.getParameter("fname");
+            String mname = request.getParameter("mname");
+            String lname = request.getParameter("lname");
+            String hcard = request.getParameter("hcard");
+            String scard = request.getParameter("scard");
+            String add_streetno = request.getParameter("add_streetno");
+            String add_street = request.getParameter("add_street");
+            String add_aptno = request.getParameter("add_aptno");
+            String add_city = request.getParameter("add_city");
+            String add_prov = request.getParameter("add_prov");
+            String add_zip = request.getParameter("add_zip");
+            String phone_no = request.getParameter("phone_no");
+            String dob = request.getParameter("dob");
+            String password1 = request.getParameter("password1");
+            String password2 = request.getParameter("password2");
+            if (!password1.equals(password2))
             {
-                request.setAttribute("errorMessage", "Username or Passwords was not correct.");
-                request.getRequestDispatcher("index.jsp").forward(request,response);
+                request.setAttribute("errorMessage", "Passwords were not the same.");
+                request.getRequestDispatcher("signupPage.jsp").forward(request,response); 
             }
         }
         catch(Throwable exc)
