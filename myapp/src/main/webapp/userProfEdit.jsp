@@ -156,11 +156,14 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <c:if test = "${errorMessage != null}">
+                <span class="bg-danger">${errorMessage}</span>
+            </c:if>            
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form role="form" method="post" action="">                                                              
+                            <form role="form" method="post" action="serv_up_usr_prof">                                                              
                                 <div class ="row" > <!--Names -->
                                     <div class="col-lg-4" style="padding-top: 5px;">
                                         <div style="text-align: left;">
@@ -316,11 +319,9 @@
                                         </div>                  
                                     </div>                           
                                 </div>                                
-                                <div class="panel-body">
-                                    <div class ="col-lg-4">
-                                        <button class="btn btn-lg btn-primary btn-block" type="submit" >Save Personal Info</button> 
-                                    </div>
-                                </div>                                
+                                <div style="padding-top: 15px">                
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit" >Save Personal Info</button> 
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -328,7 +329,6 @@
             </div>
         </div>
     </div>
-
     <!-- Core Scripts - Include with every page -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>

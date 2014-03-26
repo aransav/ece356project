@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Aran
  */
-public class serv_up_usr_prof extends HttpServlet {
+public class serv_mkapt extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,30 +33,16 @@ public class serv_up_usr_prof extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try  {
             /* TODO output your page here. You may use following sample code. */
-            String fname = request.getParameter("fname");
-            String mname = request.getParameter("mname");
-            String lname = request.getParameter("lname");
-            boolean male = request.getParameter("male") != null;
-            boolean female = request.getParameter("female") != null;
-            String hcard = request.getParameter("hcard");
-            String scard = request.getParameter("scard");
-            String add_streetno = request.getParameter("add_streetno");
-            String add_street = request.getParameter("add_street");
-            String add_aptno = request.getParameter("add_aptno");
-            String add_city = request.getParameter("add_city");
-            String add_prov = request.getParameter("add_prov");
-            String add_zip = request.getParameter("add_zip");
-            String phone_no_home = request.getParameter("phone_no_home");
-            String phone_no_cell = request.getParameter("phone_no_cell");
-            String phone_no_work = request.getParameter("phone_no_work");
-            String dob = request.getParameter("dob");
+            String userID = request.getParameter("userID");
+            String ap_date = request.getParameter("ap_date");
+            String d_name = request.getParameter("ap_date");
+            String d_depart = request.getParameter("ap_date");
+            String ap_length = request.getParameter("ap_date");
+            String ap_procedure = request.getParameter("ap_date");
+            String ap_status = request.getParameter("ap_date");
+            boolean visPrime = request.getParameter("visPrime") != null;  
             
-            if(male == female)
-            {
-                request.setAttribute("errorMessage", "Cannot be both/neither male or female");
-                request.getRequestDispatcher("userProfEdit.jsp").forward(request,response);
-            }
-            
+            response.sendRedirect("aptSucc.jsp");
         }
         catch(Throwable exc)
         {

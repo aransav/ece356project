@@ -149,7 +149,124 @@
             <!-- /.sidebar-collapse -->
         </nav>
         <!-- /.navbar-static-side -->
-      
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Make an Appointment</h1>
+                </div>
+            </div>
+            <form role="form" method="post" action="serv_mkapt">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="col-lg-12">
+                                <h3>Patient Details</h3>
+                            </div>
+                            <div class ="row" > <!--Gather Patient Info -->
+                                <div class="col-lg-4" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>User ID</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
+                                        <input type="text" name="userID" class="form-control" placeholder="User ID" required>
+                                    </div>
+                                </div> 
+                                <div class="col-lg-4" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Date</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-calendar" style="width: 10px;"></i></span>
+                                        <input type="date" name="ap_date" class="form-control" placeholder="Date" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Time</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-clock-o" style="width: 10px;"></i></span>
+                                        <input type="time" name="ap_time" class="form-control" placeholder="Time" required>
+                                    </div>
+                                </div>                                                                
+                            </div>
+                            <div class="col-lg-12">
+                                <h3>Doctor Details</h3>
+                            </div>
+                            <div class ="row" >
+                                <div class="col-lg-12" style="padding-top: 5px;">
+                                    <div class="checkbox" style="text-align: left;">
+                                      <label>
+                                        <input name="visPrime" type="checkbox" checked="checked">Are you making an appointment with your primary doctor?
+                                      </label>
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class ="row" >
+                                <div class="col-lg-12" style="padding-top: 5px;">
+                                    <label> If you are not visiting your primary doctor please fill in information below </label>
+                                </div>
+                            </div>
+                            <div class ="row" >
+                                <div class="col-lg-6" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Doctors Name</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-user-md" style="width: 10px;"></i></span>
+                                        <input type="text" name="d_name" class="form-control" placeholder="Doctors Name">
+                                    </div>
+                                </div>   
+                                <div class="col-lg-6" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Doctors Department</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-hospital-o" style="width: 10px;"></i></span>
+                                        <input type="text" name="d_depart" class="form-control" placeholder="Doctors Department">
+                                    </div>
+                                </div>                                    
+                            </div>
+                            <div class="col-lg-12">
+                                <h3>Appointment Details</h3>
+                            </div>
+                            <div class ="row" >
+                                <div class="col-lg-4" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Status</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-user" style="width: 10px;"></i></span>
+                                        <input type="text" name="ap_status" class="form-control" placeholder="Status" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Appointment Length</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-clock-o" style="width: 10px;"></i></span>
+                                        <input type="text" name="ap_length" class="form-control" placeholder="###" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4" style="padding-top: 5px;">
+                                    <div style="text-align: left;">
+                                        <label>Procedure</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class ="input-group-addon"><i class="fa fa-stethoscope" style="width: 10px;"></i></span>
+                                        <input type="text" name="ap_procedure" class="form-control" placeholder="" required>
+                                    </div>
+                                </div>                             
+                            </div>
+                        </div>                
+                    </div>              
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" >Make Appointment</button>
+            </form>
+            
+        </div>
     </div>
 
     <!-- Core Scripts - Include with every page -->

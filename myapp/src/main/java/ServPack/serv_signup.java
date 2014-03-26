@@ -37,8 +37,8 @@ public class serv_signup extends HttpServlet {
             String fname = request.getParameter("fname");
             String mname = request.getParameter("mname");
             String lname = request.getParameter("lname");
-            String male = request.getParameter("male");
-            String female = request.getParameter("female");
+            boolean male = request.getParameter("male") != null;  
+            boolean female = request.getParameter("female") != null;  
             String hcard = request.getParameter("hcard");
             String scard = request.getParameter("scard");
             String add_streetno = request.getParameter("add_streetno");
@@ -56,6 +56,11 @@ public class serv_signup extends HttpServlet {
             if (!password1.equals(password2))
             {
                 request.setAttribute("errorMessage", "Passwords were not the same.");
+                request.getRequestDispatcher("signupPage.jsp").forward(request,response); 
+            }
+            if (male == female)
+            {
+                request.setAttribute("errorMessage", "Cannot check both/neither Male and Female boxes");
                 request.getRequestDispatcher("signupPage.jsp").forward(request,response); 
             }
         }
