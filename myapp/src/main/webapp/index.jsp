@@ -32,21 +32,21 @@
   <body>
       
    <div class="container" id="signbodyCenter">
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" action="serv_login" method="post">
         <h2 class="form-signin-heading">Please Sign In</h2>
         <div class ="form-group"> 
             <div class="input-group" style="padding-top: 5px;">
                 <span class ="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="userID" class="form-control" placeholder="User ID" required autofocus>
+                <input type="text" name="userID" class="form-control" placeholder="User ID" required autofocus>
             </div>
         </div>
         <div class ="form-group">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
             </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="window.location='frontPage.jsp'">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button> 
         <div class="form-group">
             <div class="col-md-12 control">
                 <div style="padding-top:15px; font-size:85%" >
